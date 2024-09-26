@@ -1,9 +1,10 @@
-root = "."      # The root directory of the project
-tmp_dir = "tmp" # The temporary directory where air will store its temporary files
+# .air.toml
+root = "."                    # The root directory of the project
+tmp_dir = "tmp"               # The temporary directory where air will store its temporary files
 
 [build]
-bin = "tmp/main"                # Path to the generated binary
-cmd = "go build -o tmp/main ."  # Correct command to build the project
-exclude = ["tmp/*", "client/*"] # Directories to exclude
-include = ["**/*.go"]           # Files to monitor for changes
-ignore = ["tmp/*"]              # Files or directories to ignore when triggering a build
+bin = "tmp/main"              # Path to the generated binary
+cmd = "go build -o tmp/main ." # Command to build the project
+exclude = ["tmp/*", "client/node_modules/*", "client/*"] # Directories to exclude from build
+include = ["**/*.go"]         # Files to monitor for changes
+ignore = ["tmp/*"]            # Files or directories to ignore when triggering a build
